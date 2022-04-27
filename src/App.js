@@ -1,23 +1,46 @@
-import logo from './logo.svg';
 import './App.css';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
+import Anagram from './components/Anagram';
+import IdendLetters from './components/IdenLetters';
+import Payments from './components/Payments';
+import Badje from './components/Badje';
 
 function App() {
+ 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+
+<Tabs>
+    <TabList>
+      <Tab>Задача №1</Tab>
+      <Tab>Задача №2</Tab>
+      <Tab>Задача №3</Tab>
+      <Tab>Задача №4</Tab>
+    </TabList>
+
+    <TabPanel>
+    <Anagram/>
+    </TabPanel>
+    
+    <TabPanel>
+    <IdendLetters/>  
+    </TabPanel>
+    
+    <TabPanel>
+    <Payments/>
+    </TabPanel>
+
+    <TabPanel>
+    <Badje/>
+    </TabPanel>
+
+  </Tabs>
+
+
+
+
     </div>
   );
 }
