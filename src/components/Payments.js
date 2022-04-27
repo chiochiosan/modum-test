@@ -33,14 +33,20 @@ return s.match(/\d+/gi).reduce( ( s, x )=> s + Number(x), 0 );
   
 
 return (
-<div>
+<div className="row">
+    <div className="col-md-6 mx-auto">
+    <div className="alert alert-primary mt-3 mb-4" role="alert" >
     <p>3. Есть информация по платежам клиента, представленная в виде:
-«client1amlient2amountount1c2… clientnamountn», где clienti (наименование i-го клиента)– непустая строка длины не более 10, состоящая из строчных букв латинского алфавита, amounti (наименование i-го платежа)– непустая строка, состоящая из цифр.
+<br/>« client1amlient2amountount1c2… clientnamountn »,<br/>
+ где clienti (наименование i-го клиента)– непустая строка длины не более 10, состоящая из строчных букв латинского алфавита, amounti (наименование i-го платежа)– непустая строка, состоящая из цифр.
 Написать код, который по виду платежа найдет суммарный платеж.</p>
-    <input type="text" value={value} onChange={(e)=>setValue(e.target.value)}/>        
+    </div>
+    
+    <input type="text" className='form-control mt-3 mb-3' value={value} onChange={(e)=>setValue(e.target.value)} placeholder='Введите строку платежа'/>        
     {/* <button onClick={calcPayments(value)}>Подсчитать</button>
     <p>Total payments:{total}</p>         */}
-<p>Total payments:{calcPayments(value)}</p>
+<div className="mt-3 mb-5" ><h2>Общая сумма:{calcPayments(value)}</h2></div>
+    </div>
     </div>
 )
 

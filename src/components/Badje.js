@@ -1,5 +1,6 @@
 import React from 'react'
-import { useForm, useFormState } from 'react-hook-form'
+import { useForm } from 'react-hook-form'
+import './../Card.css';
 
 import {useState} from 'react'
 const Badje = () => {
@@ -13,8 +14,8 @@ const Badje = () => {
     formState: { errors }
   } = useForm()
 
-  const [visitor, setName] = useState('');
-  const [vdate, setDate] = useState('');
+  const [visitor, setName] = useState('XXXXXXXXX');
+  const [vdate, setDate] = useState('XX.XX.XXXX');
  // const onSubmit = (data) => alert(JSON.stringify(data))
 
  
@@ -23,16 +24,30 @@ const Badje = () => {
 
  const onSubmit = (data) =>{ setName(data.firstName); setDate(data.date)}
   return (
-    <>
+<div className="row">
+    <div className="col-md-6 mx-auto">
+    <div className="alert alert-primary mt-3 mb-4" role="alert" >
+    <p>Создать форму заполнения бейджа посетителя мероприятия. После заполнения полей и нажатия кнопки, информация должна появится на бейдже. Реализовать проверки ввода (пустые значения и некорректные даты)</p>
+    </div>
     
-
-    <p>Name:{visitor}</p>
-    <p>Date:{vdate}</p>
+<div className='col-6 card mx-auto'>
+    <div className="cardvisitor mt-3 text-left">Посетитель:</div>
+    <div className="cardinput col-12">{visitor}</div>
+   
+    <div className="row col-12 mt-5">
+    
+        <div>Дата посещения:</div>
+    
+    <div className="cardinput col-md-6 ml-2">{vdate.split('-').reverse().join('.')}</div>
+    
+    </div>
+   
+    </div>
       <div className='card-body'>
         <form onSubmit={handleSubmit(onSubmit)}>
           {/* Посетитель */}
-          <div className='form-row'>
-            <div className='form-group col-5'>
+          <div className='col-6 mx-auto'>
+            <div className='form-group'>
               <label>Посетитель</label>
               <input
                 name='firstName'
@@ -52,8 +67,8 @@ const Badje = () => {
           {/* /Посетитель */}
 
           {/* Дата посещения */}
-          <div className='form-row'>
-            <div className='form-group col-5'>
+          <div className='col-6 mx-auto'>
+            <div className='form-group'>
               <label>Дата посещения:</label>
 
               <input
@@ -71,20 +86,21 @@ const Badje = () => {
           {/* /Дата посещения */}
 
           {/* Кнопки */}
-          <button type='submit' className='btn btn-secondary'>
+          <button type='submit' className='btn btn-success mr-1'>
             Подтвердить
           </button>
           <button
             type='button'
             onClick={() => reset()}
-            className='btn btn-secondary'
+            className='btn btn-danger ml-1'
           >
             Сбросить
           </button>
           {/* /Кнопки */}
         </form>
       </div>
-    </>
+    </div>
+    </div>
   )
 }
 

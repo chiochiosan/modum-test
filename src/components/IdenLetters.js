@@ -19,12 +19,18 @@ function ident(str1, str2){
   
 
 return (
-<div>
-    <p>2. Написать код, определяющий количество одинаковых букв в двух словах.</p>
-    <input type="text" value={value1} onChange={(e)=>setValue1(e.target.value)}/>        
-    <input type="text" value={value2} onChange={(e)=>setValue2(e.target.value)}/>        
-    <p>ident: {ident(value1, value2)}</p>        
+<div className="row">
+    <div className="col-md-6 mx-auto">
+        <div className="alert alert-primary mt-3 mb-4" role="alert" >
+        <p>2. Написать код, определяющий количество одинаковых букв в двух словах.</p>
+        </div>
+    
+    <input type="text" className='form-control mt-3 mb-3' value={value1} onChange={(e)=>setValue1(e.target.value)} placeholder='Введите слово 1'/>        
+    <input type="text" className='form-control mt-3 mb-3' value={value2} onChange={(e)=>setValue2(e.target.value)} placeholder='Введите слово 2'/>        
+    
+    <div className="mt-3 mb-5" ><h2>Количество одинаковых букв: {ident(value1, value2)}</h2></div>        
 
+    </div>
     </div>
 )
 

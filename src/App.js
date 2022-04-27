@@ -1,10 +1,11 @@
 import './App.css';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
-import Anagram from './components/Anagram';
+import Palindrom from './components/Palindrom';
 import IdendLetters from './components/IdenLetters';
 import Payments from './components/Payments';
 import Badje from './components/Badje';
+import Tasks from './components/Tasks';
 
 function App() {
  
@@ -14,14 +15,20 @@ function App() {
 
 <Tabs>
     <TabList>
-      <Tab>Задача №1</Tab>
-      <Tab>Задача №2</Tab>
-      <Tab>Задача №3</Tab>
-      <Tab>Задача №4</Tab>
+      <Tab>Теcтовое задание</Tab>
+      <Tab>Задача 1</Tab>
+      <Tab>Задача 2</Tab>
+      <Tab>Задача 3</Tab>
+      <Tab>Задача 4</Tab>
     </TabList>
 
     <TabPanel>
-    <Anagram/>
+    <Tasks/>
+    </TabPanel>
+    
+
+    <TabPanel>
+    <Palindrom/>
     </TabPanel>
     
     <TabPanel>
